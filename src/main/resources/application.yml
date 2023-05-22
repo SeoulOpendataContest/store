@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      host: mongodb #로컬로할거면 localhost로
+      port: 27017
+      database: Store
