@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-@Document(collection = "goodvibestorelist")
+@Document(collection = "goodvibestorelistfinal")
 @Getter @Setter
 public class GoodVibeStore {
     @Field("category")
@@ -26,13 +26,19 @@ public class GoodVibeStore {
     private GeoJsonPoint location;
     @Field("benefit")
     private  String benefit;
+    @Field("storeurl")
+    private String storeurl;
+    @Field("storeaddress")
+    private String storeaddress;
 
-    public GoodVibeStore(String category, String name, double latitude, double longitude,GeoJsonPoint location,String benefit) {
+    public GoodVibeStore(String category, String name, double latitude, double longitude,GeoJsonPoint location,String benefit,String storeurl,String storeaddress) {
         this.category = category;
         this.name = name;
         this.latitude=latitude;
         this.longitude=longitude;
         this.location = location;
         this.benefit=benefit;
+        this.storeaddress=storeaddress;
+        this.storeurl=storeurl;
     }
 }

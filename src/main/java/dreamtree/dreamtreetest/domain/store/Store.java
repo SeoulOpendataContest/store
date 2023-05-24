@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "2dStore")
+@Document(collection = "2dStorefinal")
 @Getter @Setter
 public class Store {
     @Field("category")
@@ -24,12 +24,18 @@ public class Store {
     private double longitude;
     @Field("location")
     private GeoJsonPoint location;
+    @Field("storeurl")
+    private String storeurl;
+    @Field("storeaddress")
+    private String storeaddress;
 
-    public Store(String category, String name, double latitude, double longitude,GeoJsonPoint location) {
+    public Store(String category, String name, double latitude, double longitude,GeoJsonPoint location,String storeurl,String storeaddress) {
         this.category = category;
         this.name = name;
         this.latitude=latitude;
         this.longitude=longitude;
         this.location = location;
+        this.storeaddress=storeaddress;
+        this.storeurl=storeurl;
     }
 }
