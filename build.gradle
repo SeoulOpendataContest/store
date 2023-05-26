@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'dreamtree'
-version = '0.0.1-SNAPSHOT'
+version = 'dreamtree'
 sourceCompatibility = '11'
 
 configurations {
