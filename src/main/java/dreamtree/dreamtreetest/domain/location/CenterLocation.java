@@ -1,4 +1,4 @@
-package dreamtree.dreamtreetest.domain.center;
+package dreamtree.dreamtreetest.domain.location;
 
 import lombok.Getter;
 import lombok.Setter;

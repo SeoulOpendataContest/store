@@ -3,18 +3,17 @@ package dreamtree.dreamtreetest.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dreamtree.dreamtreetest.domain.location.MyLocation;
 import dreamtree.dreamtreetest.domain.goodvibestore.GoodVibeStore;
 import dreamtree.dreamtreetest.domain.goodvibestore.GoodVibeStoreList;
 import dreamtree.dreamtreetest.domain.searchstore.SearchStore;
-import dreamtree.dreamtreetest.domain.center.CenterLocation;
+import dreamtree.dreamtreetest.domain.location.CenterLocation;
 import dreamtree.dreamtreetest.domain.store.AllStoreList;
 import dreamtree.dreamtreetest.domain.store.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Metrics;
 import org.springframework.data.geo.Point;
-import org.springframework.util.StreamUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -79,6 +78,14 @@ public class LocationController {
         ObjectMapper objectMapper=new ObjectMapper();
         String storeListJson=objectMapper.writeValueAsString(store);
         return storeListJson;
+    }
+
+    @ResponseBody
+    @RequestMapping(value ="/mylocation")
+    public String getMyLocation(@RequestBody MyLocation myLocation) throws JsonProcessingException{
+        String myLocationJson=myLocation.findMyAddress();
+        return myLocationJson;
+
     }
 
 
